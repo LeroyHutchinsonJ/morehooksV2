@@ -4,12 +4,14 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 
 function App() {
-  const [count, countIncrease] = useState(0);
+  //The count seems like the variable, the setCount changes the variable, the useState is the default value of count
+  var [count, setCount] = useState(0);
 
+  //It seems like the second parameter returns everything as the value of count
   return (
     <div className="App">
-      <h1>{count}</h1>
-      <button onClick={() => countIncrease(count + 1)}>Click Me</button>
+      <div>{count}</div>
+      <button onClick={() => setCount(count + 1)}>Hello</button>
       <div>Blahblah</div>
     </div>
   );
