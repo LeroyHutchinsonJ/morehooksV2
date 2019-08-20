@@ -6,18 +6,19 @@ import "./styles.css";
 function App() {
   //The count seems like the variable, the setCount changes the variable, the useState is the default value of count
   var [fruit, setFruit] = useState("");
+  var [text, setText] = useState("");
   //It seems like the second parameter returns everything as the value of count
 
-  var text = "";
-  var setText = event => {
-    text = event.target.value;
+  //Make sure to make this have a function that returns something so we can see the text update in real time
+  var setTextValue = event => {
+    setText(event.target.value);
   };
 
   //When enter is pressed, set text to the value of fruit
   var onEnterPress = a => {
     if (a.key === "Enter") {
       setFruit(text);
-      text = "";
+      setText("");
     }
   };
 
@@ -28,7 +29,8 @@ function App() {
         type="text"
         placeholder="Type in the fruit"
         onKeyPress={onEnterPress}
-        onChange={setText}
+        onChange={setTextValue}
+        value={text}
       />
     </div>
   );
