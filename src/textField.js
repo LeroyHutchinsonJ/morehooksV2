@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-function App() {
+function TextField() {
   //The count seems like the variable, the setCount changes the variable, the useState is the default value of count
   var [fruit, setFruit] = useState("");
   var [text, setText] = useState("");
@@ -37,4 +37,4 @@ function App() {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<TextField />, rootElement);
